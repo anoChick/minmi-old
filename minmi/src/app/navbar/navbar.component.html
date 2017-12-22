@@ -1,0 +1,7 @@
+<sm-menu title="Minmi" class="inverted violet" >
+  <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
+  <sm-menu class="menu right secondary">
+    <a sm-item href="#/elements/menu" image="http://semantic-ui.com/images/avatar/small/stevie.jpg">Elliot Fu</a>
+    <a sm-item icon="sidebar big"></a>
+  </sm-menu>
+</sm-menu>
