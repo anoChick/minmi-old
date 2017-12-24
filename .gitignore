@@ -1,0 +1,3 @@
+/firebase/functions/credentials/*
+/firebase/functions/lib/*
+node_modules
