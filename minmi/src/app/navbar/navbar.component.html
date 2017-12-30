@@ -1,7 +1,15 @@
-<sm-menu title="Minmi" class="inverted violet" >
-  <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
+<sm-menu title="MinMi" class="fixed inverted violet" >
+  <a sm-item *ngFor="let item of items" [icon]="item.icon" routerLink="{{item?.path}}" >{{item?.title}}</a>
+
+
   <sm-menu class="menu right secondary">
-    <a sm-item href="#/elements/menu" image="http://semantic-ui.com/images/avatar/small/stevie.jpg">Elliot Fu</a>
-    <a sm-item icon="sidebar big"></a>
+    <sm-button class="mini right orange " style="margin:6px;" routerLink="/posts/new">記事を書く</sm-button>
+
+    <sm-dropdown title="{{ (userService.currentUser | async)?.displayName }} " class="floating icon button" [options]="{ action: 'hide' }">
+      <sm-item (click)="logout()">
+        ログアウト
+
+      </sm-item>
+    </sm-dropdown>
   </sm-menu>
 </sm-menu>
