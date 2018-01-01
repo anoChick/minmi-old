@@ -13,9 +13,6 @@ import * as firebase from 'firebase/app';
 })
 export class NavbarComponent implements OnInit {
   items: Array<Object> = [
-    {title:"Posts",path:"/aaa"},
-    {title:"ログイン",path:"/login"},
-    {title:"グループ",path:"/groups"},
     {title:"ユーザ一覧",path:"/users"},
     {title:"プロフィール",path:"/profile"},
 

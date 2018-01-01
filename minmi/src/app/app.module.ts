@@ -25,6 +25,11 @@ import { PostFormComponent } from './post-form/post-form.component';
 import { GroupsComponent } from './groups/groups.component';
 import { UsersComponent } from './users/users.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ChannelComponent } from './channel/channel.component';
+import { ChannelsComponent } from './channels/channels.component';
+import { PostSegmentComponent } from './post-segment/post-segment.component';
+import { ChannelNewComponent } from './channel-new/channel-new.component';
+import { ChannelModalComponent } from './channel-modal/channel-modal.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { ProfileComponent } from './profile/profile.component';
     PostFormComponent,
     GroupsComponent,
     UsersComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChannelComponent,
+    ChannelsComponent,
+    PostSegmentComponent,
+    ChannelNewComponent,
+    ChannelModalComponent
   ],
   imports: [
     routing,

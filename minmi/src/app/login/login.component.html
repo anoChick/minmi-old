@@ -1,6 +1,6 @@
-<div *ngIf="!(currentUser | async)">
+<sm-loader [complete]="!loading" class="inverted" text="処理中..."></sm-loader>
+
   <button class="ui google fluid plus button icon" (click)="login()">
     <i class="google plus icon"></i>
     Sign in with Google
   </button>
-</div>

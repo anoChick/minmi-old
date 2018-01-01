@@ -1,3 +1,47 @@
-<p>
-  top works!
-</p>
+<div class='ui two column stackable grid'>
+  <div class='four wide column'>
+    <div class="ui items">
+      <div style='margin-bottom:8px;' *ngFor="let channel of channels | async">
+        <sm-segment class="wide {{ currentChannelID== channel.id ? 'tertiary' : ''}}" (click)="selectChannel(channel)">
+          <div class="ui comments">
+            <div class="comment">
+              <a class="avatar">
+                <img src="{{channel.photoURL}}">
+              </a>
+              <div class="content">
+                <a class="author">{{channel.name}}</a>
+                <div class="metadata">
+                  <div class="rating">
+                    5 Users
+                  </div>
+                  <div class="date">記事数: 34</div>
+
+                </div>
+                <div class="text">{{channel.description}}</div>
+              </div>
+            </div>
+          </div>
+        </sm-segment>
+      </div>
+      <app-channel-modal></app-channel-modal>
+    </div>
+
+  </div>
+
+  <div class='ui eight wide column'>
+    <sm-segment>
+      <div *ngFor="let postPath of currentChannelPosts | async" class='ui'>
+        <app-post-segment [postPath]="postPath"></app-post-segment>
+        <div class="ui clearing divider"></div>
+      </div>
+    </sm-segment>
+  </div>
+
+  <div class='four wide column'>
+    <div class="ui items">
+
+
+    </div>
+
+  </div>
+</div>
