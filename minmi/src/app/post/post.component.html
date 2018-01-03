@@ -1,0 +1,5 @@
+<div class="box">
+  {{ (user | async)?.displayName }}
+  <hr>
+  <markdown [data]="(post | async)?.body"></markdown>
+</div>

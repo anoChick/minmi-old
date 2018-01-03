@@ -1,0 +1,18 @@
+<div>
+    <!--  class="clickable" routerLink="{{postPath}}"  -->
+  <div class='clearfix' style='padding-bottom: 8px;'>
+    <nz-avatar style='float:left;' nzSrc="{{(user | async)?.photoURL}}"></nz-avatar>
+    <span style='float:left; margin-left:8px; margin-top: 8px;'>
+      <b style='font-weight:bold;'>{{(user | async)?.displayName}}</b>
+      <span style='font-size:10px;'>投稿日: {{post.createdAt | dateTime}}</span>
+    </span>
+
+    <span style='float:right; margin-left:8px; margin-top: 8px;'>
+      <button nz-button [nzSize]="'small'"><i class="anticon anticon-smile-o"></i></button>
+      <button nz-button [nzSize]="'small'" (click)="editPost()"><i class="anticon anticon-edit"></i></button>
+      <button nz-button [nzSize]="'small'" (click)="deletePost()"><i class="anticon anticon-delete"></i></button>
+
+    </span>
+  </div>
+  <markdown [data]="post.body"></markdown>
+</div>

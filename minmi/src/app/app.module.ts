@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgSemanticModule } from 'ng-semantic';
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -11,6 +10,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MarkdownModule } from 'ngx-md';
+
+import { NgZorroAntdModule, NzUtilModule } from 'ng-zorro-antd';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 import { UserService } from './services/user.service'
 
@@ -29,7 +33,8 @@ import { ChannelComponent } from './channel/channel.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { PostSegmentComponent } from './post-segment/post-segment.component';
 import { ChannelNewComponent } from './channel-new/channel-new.component';
-import { ChannelModalComponent } from './channel-modal/channel-modal.component';
+import { LoadingComponent } from './loading/loading.component';
+import { DateTimePipe } from './pipe/date-time.pipe';
 
 @NgModule({
   declarations: [
@@ -49,19 +54,22 @@ import { ChannelModalComponent } from './channel-modal/channel-modal.component';
     ChannelsComponent,
     PostSegmentComponent,
     ChannelNewComponent,
-    ChannelModalComponent
+    LoadingComponent,
+    DateTimePipe
   ],
   imports: [
     routing,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NgSemanticModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    BrowserAnimationsModule,
+    NgZorroAntdModule.forRoot(),
+    NzUtilModule
   ],
   providers: [
     appRoutingProviders,

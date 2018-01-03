@@ -14,7 +14,6 @@ import * as firebase from 'firebase/app';
 export class NavbarComponent implements OnInit {
   items: Array<Object> = [
     {title:"ユーザ一覧",path:"/users"},
-    {title:"プロフィール",path:"/profile"},
 
   ];
   constructor(public afAuth: AngularFireAuth, public userService: UserService) {

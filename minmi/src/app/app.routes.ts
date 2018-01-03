@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PostComponent } from './post/post.component';
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelsComponent } from './channels/channels.component';
+import { ChannelNewComponent } from './channel-new/channel-new.component';
 
 import { TopComponent } from './top/top.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'posts/new', component: PostsNewComponent},
   { path: 'posts/:id/edit', component: PostsEditComponent},
   { path: 'channels', component: ChannelsComponent},
+  { path: 'channel/new', component: ChannelNewComponent},
   { path: 'channels/:channelID', component: ChannelComponent},
   { path: 'posts/:postID', component: PostComponent},
 

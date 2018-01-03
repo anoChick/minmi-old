@@ -1,0 +1,48 @@
+<div class='box'>
+  <app-loading *ngIf="loading"></app-loading>
+  <app-loading *ngIf="uploading" message="アップロード中..."></app-loading>
+
+  <h2>チャンネル作成</h2>
+  <br>
+  <form nz-form *ngIf="channelForm" (ngSubmit)="onSubmit()" [formGroup]="channelForm">
+    <div nz-form-item nz-row>
+      <div nz-form-label nz-col [nzSpan]="4">
+        <label>名前</label>
+      </div>
+      <div nz-form-control nz-col [nzSpan]="14">
+        <nz-input formControlName="name" [nzPlaceHolder]="'名前'" [nzSize]="'large'">
+        </nz-input>
+        <div nz-form-explain *ngIf="channelForm.controls.name.dirty&&channelForm.controls.name.hasError('required')">名前は必須です。</div>
+      </div>
+    </div>
+
+
+
+
+    <div nz-form-item nz-row>
+      <div nz-form-label nz-col [nzSpan]="4">
+        <label>概要</label>
+      </div>
+      <div nz-form-control nz-col [nzSpan]="14">
+        <nz-input formControlName="description" [nzRows]="5" [nzType]="'textarea'" [nzSize]="'large'">
+        </nz-input>
+      </div>
+    </div>
+    <div nz-form-item nz-row>
+      <div nz-form-label nz-col [nzSpan]="4">
+        <label>アイコン</label>
+      </div>
+      <div nz-form-control nz-col [nzSpan]="14">
+          <input type="file" accept="image/*" (change)="onChangeInput($event)">
+          <br>
+          <img *ngIf="channelForm.controls.photoURL" src="{{this.channelForm.controls.photoURL.value}}" style='max-height:200px;'>
+      </div>
+    </div>
+    <div nz-form-item nz-row style="margin-bottom:8px;">
+      <div nz-form-control nz-col >
+        <button nz-button [nzSize]="'large'" [nzType]="'primary'" style='width: 100%;'>更新</button>
+      </div>
+    </div>
+  </form>
+
+</div>

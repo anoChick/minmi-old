@@ -1,0 +1,18 @@
+
+<div class="ui three column doubling stackable grid container">
+  <div *ngFor="let group of groups | async" class="column">
+    <div class="ui items">
+      <div class="item">
+        <a class="ui small image">
+          <img>
+        </a>
+        <div class="content">
+          <a class="header">{{group.name}}</a>
+          <div class="description">
+            <p>{{group.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

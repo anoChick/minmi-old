@@ -1,12 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
   font-family: 'Noto Sans Japanese', sans-serif;
-
+  background-color: #f5f3f1 !important;
   .main-container {
     margin-top:50px;
     padding: 8px;
   }
 }
+
+h1,h2,h3,h4,h5,h6 {
+  &.header {
+    small {
+      color: #aaa;
+    }
+    border-bottom: 1px solid #ddd;
+  }
+}
+h2.header small {
+  font-size: 14px;
+}
+
+
 markdown img {
-  max-width: 100% !important;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.box {
+  background-color: #fefdfc;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  padding: 16px;
+  margin: 0 0 16px;
+  &.active {
+    background-color: #eaeced;
+
+  }
+}
+
+.clickable {
+  cursor:pointer;
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
 }

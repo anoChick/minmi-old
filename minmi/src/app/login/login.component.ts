@@ -11,7 +11,7 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 
 
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   private userDoc: AngularFirestoreDocument<User>;
   public currentUser: Observable<User>;
   constructor(private afs: AngularFirestore, public userService: UserService, public afAuth: AngularFireAuth) {
+
     console.log(this.afAuth.authState);
 
     this.afAuth.authState.subscribe(authUser => {

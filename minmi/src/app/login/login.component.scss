@@ -1,0 +1,21 @@
+.signin-with-google {
+  width:100%;
+  margin: 8px 0;
+  padding: 6px;
+  font-weight: 200;
+  color: #fff;
+  border: 0px solid #fff;
+  background: #DC4E41;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+  border-radius: 2px;
+  i {
+    float: left;
+    margin: 5px 8px;
+  }
+  &:focus,&:hover{
+    background-color: #CF4134 ;
+  }
+  &:active{
+    background-color: #C33528 ;
+  }
+}

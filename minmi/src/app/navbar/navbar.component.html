@@ -1,14 +1,27 @@
-<sm-menu title="MinMi" class="fixed inverted violet" >
-  <a sm-item *ngFor="let item of items" [icon]="item.icon" routerLink="{{item?.path}}" >{{item?.title}}</a>
-  <sm-menu class="menu right secondary">
-    <sm-item *ngIf="!userService.currentUser" routerLink="/login">
-      ログイン
-    </sm-item>
-    <sm-button *ngIf="userService.currentUser" class="mini right orange " style="margin:6px;" routerLink="/posts/new">記事を書く</sm-button>
-    <sm-dropdown *ngIf="userService.currentUser" title="{{ (userService.currentUser | async)?.displayName }} " class="floating icon button" [options]="{ action: 'hide' }">
-      <sm-item (click)="logout()">
-        ログアウト
-      </sm-item>
-    </sm-dropdown>
-  </sm-menu>
-</sm-menu>
+<ul nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'">
+  <a nz-menu-item routerLink="/"><b>MinMi</b></a>
+
+  <a nz-menu-item *ngFor="let item of items" routerLink="{{item?.path}}">{{item?.title}}</a>
+  <a nz-menu-item *ngIf="!userService.currentUser" routerLink="/login" style='float:right; margin-right:8px;'>
+    ログイン
+  </a>
+
+  <li nz-submenu ant-menu-light *ngIf="userService.currentUser" class='ant-menu-light' style='float:right; margin-right:8px;'>
+    <span title>
+      <nz-avatar nzIcon="user" style='margin: 6px 4px -12px 0;' nzSrc="{{ (userService.currentUser | async)?.photoURL }}"></nz-avatar>
+      {{ (userService.currentUser | async)?.displayName }}
+      <i class="anticon anticon-down"></i>
+    </span>
+    <ul>
+      <li nz-menu-group>
+        <ul>
+          <a nz-menu-item routerLink="/profile">プロフィール</a>
+          <a nz-menu-item (click)="logout()">ログアウト</a>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <button nz-button *ngIf="userService.currentUser" [nzType]="'primary'" style="float:right; margin:8px;" routerLink="/posts/new">
+    <span>記事を書く</span>
+  </button>
+</ul>
