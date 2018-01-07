@@ -1,0 +1,40 @@
+
+<div>
+  <form nz-form (ngSubmit)="onSubmit()" [formGroup]="postForm">
+    <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'">
+      <nz-tab>
+        <ng-template #nzTabHeading>
+          書く
+        </ng-template>
+        <div class='box' style='margin-top:-16px; border-radius: 0 0 4px 4px; border-top-width:0px;'>
+          <app-markdown-editor formControlName="body" style="margin-bottom: 18px;"></app-markdown-editor>
+          <div nz-form-item nz-row style="margin:8px 0 0px 0;">
+            <div nz-form-control nz-col >
+              <button nz-button [nzSize]="'large'" [nzType]="'primary'" style='width: 100%;'>投稿</button>
+            </div>
+          </div>
+        </div>
+      </nz-tab>
+      <nz-tab>
+        <ng-template #nzTabHeading>
+          プレビュー
+        </ng-template>
+        <div class='box' style='margin-top:-16px; border-radius: 0 0 4px 4px; border-top-width:0px;'>
+
+          <div class="box preview">
+            <markdown [data]="postForm.controls.body.value"></markdown>
+          </div>
+          <div nz-form-item nz-row style="margin:8px 0 0px 0;">
+            <div nz-form-control nz-col >
+              <button nz-button [nzSize]="'large'" [nzType]="'primary'" style='width: 100%;'>投稿</button>
+            </div>
+          </div>
+        </div>
+
+      </nz-tab>
+    </nz-tabset>
+
+
+
+  </form>
+</div>

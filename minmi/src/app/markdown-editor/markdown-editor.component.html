@@ -1,0 +1,5 @@
+<div class='editor'>
+  <app-loading *ngIf="uploading" full message='アップロード中...'></app-loading>
+  <nz-input [(ngModel)]="value" [nzRows]="10" [nzType]="'textarea'" [nzPlaceHolder]="'Markdown記法が有効です'" [nzSize]="'large'">
+   </nz-input>
+</div>

@@ -27,6 +27,8 @@
           {{tab.name}}
         </ng-template>
         <div *ngIf="tab.name=='ストリーム'">
+          <app-post-edit-mini *ngIf="currentChannelID" [channelID]="currentChannelID" ></app-post-edit-mini>
+
           <span *ngIf="currentChannelPostSize == 0">投稿がありません</span>
           <div *ngFor="let post of currentChannelPosts | async" class='box'>
             <app-post-segment (refresh)="selectChannelById(post.channelUID)" [post]="post"></app-post-segment>

@@ -35,6 +35,9 @@ import { PostSegmentComponent } from './post-segment/post-segment.component';
 import { ChannelNewComponent } from './channel-new/channel-new.component';
 import { LoadingComponent } from './loading/loading.component';
 import { DateTimePipe } from './pipe/date-time.pipe';
+import { PostEditMiniComponent } from './post-edit-mini/post-edit-mini.component';
+import { MarkdownEditorComponent } from './markdown-editor/markdown-editor.component';
+import { EmojiPageComponent } from './emoji-page/emoji-page.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { DateTimePipe } from './pipe/date-time.pipe';
     PostSegmentComponent,
     ChannelNewComponent,
     LoadingComponent,
-    DateTimePipe
+    DateTimePipe,
+    PostEditMiniComponent,
+    MarkdownEditorComponent,
+    EmojiPageComponent
   ],
   imports: [
     routing,

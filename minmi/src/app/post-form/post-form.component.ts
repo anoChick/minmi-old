@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-post-form',
   templateUrl: './post-form.component.html',
-  styleUrls: ['./post-form.component.css']
+  styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent implements OnInit {
   private _el: HTMLElement;
@@ -42,7 +42,8 @@ export class PostFormComponent implements OnInit {
   createForm() {
     this.postForm = this.fb.group({ // <-- the parent FormGroup
         channelUID: [null, Validators.required ],
-        body: ["# タイトル \n\n 内容", Validators.required ]
+        body: ['', Validators.required ],
+        title: ['', Validators.required ]
     });
   }
 
@@ -136,6 +137,7 @@ export class PostFormComponent implements OnInit {
       if(!user){return};
       const collection = self.db.collection('posts');
       collection.add({
+        title: self.postForm.controls.title.value,
         body: self.postForm.controls.body.value,
         ownerID:user.uid,
         channelID:channelID,
